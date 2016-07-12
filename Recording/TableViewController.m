@@ -68,11 +68,15 @@
     //cell.textLabel.text = @"hi";
     //a=a+1;
     
+    NSDateFormatter* realDate=[[NSDateFormatter alloc] init];
+    realDate.dateFormat=@"yyyyMMdd HH:mm:ss";
+    realDate.locale=[NSLocale currentLocale];
+    
     Recording* r = (Recording*)[self.recordingsList objectAtIndex:indexPath.row];
     
     NSLog(@"haha %@ (%lu recordings)",r.description, self.recordingsList.count);
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", r.date];
+    cell.textLabel.text = [realDate stringFromDate:r.date];
     
     //NSLog(@"hi!");
     return cell;
