@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recording.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
 
+@interface ViewController : UIViewController <AVAudioRecorderDelegate>
+
+@property (strong, nonatomic) NSMutableArray* allRecording;
+@property (strong, nonatomic) Recording* currentRecording;
+@property (strong, nonatomic) AVAudioRecorder* recorder;
+@property (strong, nonatomic) NSTimer* timer;
+
+@property (strong, nonatomic) IBOutlet UIProgressView *ProgressView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
+- (IBAction)StartRecording:(id)sender;
+
+
+- (IBAction)StopRecording:(id)sender;
 
 @end
 
