@@ -47,7 +47,7 @@ bool Times=YES;
 
 -(void)handleTimer
 {
-    self.ProgressView.progress += 0.04;
+    self.ProgressView.progress += 0.02;
     if(self.ProgressView.progress == 1 )
     {
         [self.timer invalidate];
@@ -58,6 +58,7 @@ bool Times=YES;
         Times=YES;
         
     }
+    self.currentTime.text=[NSString stringWithFormat:@"%0.1f",self.ProgressView.progress*10];
    
 }
 
@@ -119,8 +120,11 @@ bool Times=YES;
     [recordingSettings setValue:@(AVAudioQualityHigh)
                          forKey:AVEncoderAudioQualityKey];
     
-    
-    self.currentRecording = [[Recording alloc] initWithDate: [NSDate date]];
+     //   NSDate* now = [NSDate date];
+        
+       // self.currentRecording = [[Recording alloc] initWithDate: now];
+        
+    self.currentRecording = [[Recording alloc] initWithDate:[NSDate date]];
     
     [self.allRecording addObject: self.currentRecording];
     
@@ -178,7 +182,7 @@ bool Times=YES;
     }
     
     // start recording
-    [self.recorder recordForDuration:(NSTimeInterval)5];
+    [self.recorder recordForDuration:(NSTimeInterval)10];
     
     self.statusLabel.text = @"Recording...";
     self.ProgressView.progress = 0.0;

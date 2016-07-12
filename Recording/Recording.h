@@ -18,6 +18,8 @@
 
 @property (readonly, nonatomic) NSURL* url;
 
+//@property (readonly, nonatomic) NSDateFormatter* realDate;
+
 
 -(Recording*) initWithDate: (NSDate*) aDate;
 

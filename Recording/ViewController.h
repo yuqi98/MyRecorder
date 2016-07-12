@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UIProgressView *ProgressView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentTime;
 
 - (IBAction)StartRecording:(id)sender;
 

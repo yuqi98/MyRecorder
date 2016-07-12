@@ -29,9 +29,10 @@
 
 -(Recording*) initWithDate: (NSDate*) aDate;
 {
+    //aDate.locale = [NSLocale currentLocale];
     self = [super init];
     if(self){
-        self.date=aDate;
+        self.date = aDate;
     }
     return self;
 }
